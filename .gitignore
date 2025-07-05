@@ -1,0 +1,23 @@
+# Jupyter Notebook specific files
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Python specific files
+__pycache__/
+*.pyc
+.env
+venv/
+env/
+
+# Data files (if not intended for version control)
+# data/
+# *.csv
+# *.xlsx
+# *.json
+
+# Operating System and Editor specific files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
