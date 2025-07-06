@@ -3,15 +3,18 @@
 
 **Project Timeline (Marked completion date: 8 July 2025):**
 - Baseline simulations (*For Fast-Track workflow) done✅
-- [Before designing full simulation] Look through past projects✅
-- [Before designing full simulation] Refine "types" of simulation outputs - From past projects.✅
-- [While designing full simulation] Add complexity of integrating BOTH (1) Fast-Track & (2) Main ED workflows to "simulation logic".✅
-- [Finalise code] main.py file for PoC + README.md instructions✅
-- [Report writing] Medium Article to present workflows, code, results and conclusions - *Review! ++Process Flow + neccessary tables.
+- **[Before designing full simulation]** Look through past projects✅
+- **[Before designing full simulation]** Refine "types" of simulation outputs - From past projects.✅
+- **[Designing full simulation]** Integrate BOTH (1) Fast-Track & (2) Main ED workflows to "simulation logic"✅
+- **[Finalise code]** main.py file for PoC + README.md instructions✅
+- **[Report writing]** Medium Article to present workflows, code, results and conclusions
+- **[Final Additions]** Execution traces + Optimisation codes - *To design appropriate system capacity*. 
 
 ![Image](images/ED.png)
 
 ---
+## **Process Flow Chart**
+![Image](images/simPy_processflow.png)
 
 ## **Setup Instructions**  
 
@@ -73,6 +76,8 @@ After the simulation runs, the following outputs are generated:
 
 > ℹ️ If not already present, the script will automatically create the `plots/` directory.
 
+---
+
 ## **Content**
 ```
 main folder/
@@ -80,6 +85,8 @@ main folder/
 ├── 2.01-jk-implementation.ipynb        # Implementation of full system workflow to model performance of ED System set-up to understand system efficieny and patient experience
 ├── main.py                             # Python script to simulate process flow and return outputs as actionable insights (refer to output format above)
 ```
+
+---
 
 ## **Contributing**  
 Feel free to open issues and submit pull requests. Contributions are welcome!
