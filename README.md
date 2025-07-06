@@ -73,6 +73,8 @@ After the simulation runs, the following outputs are generated:
 
 > ℹ️ If not already present, the script will automatically create the `plots/` directory.
 
+---
+
 ## **Content**
 ```
 main folder/
@@ -80,6 +82,8 @@ main folder/
 ├── 2.01-jk-implementation.ipynb        # Implementation of full system workflow to model performance of ED System set-up to understand system efficieny and patient experience
 ├── main.py                             # Python script to simulate process flow and return outputs as actionable insights (refer to output format above)
 ```
+
+---
 
 ## **Contributing**  
 Feel free to open issues and submit pull requests. Contributions are welcome!
