@@ -31,10 +31,16 @@ class Hospital:
         yield self.env.timeout(max(5, np.random.normal(30, 5)))
 
     def fast_lab(self):
+        yield self.env.timeout(max(1, np.random.normal(6, 3)))
+    
+    def fast_lab_wait(self):
         yield self.env.timeout(max(10, np.random.normal(25, 5)))
 
-    def ed_lab(self):
+    def ed_lab_wait(self):
         yield self.env.timeout(max(15, np.random.normal(40, 10)))
+
+    def ed_lab(self):
+        yield self.env.timeout(max(3, np.random.normal(10, 4)))
 
 
 # ------------------- Patient Process ------------------- #
@@ -51,6 +57,7 @@ def patient(env, name, hospital, wait_times):
             with hospital.fast_nurse.request() as req:
                 yield req
                 yield env.process(hospital.fast_lab())
+            yield env.process(hospital.fast_lab_wait())
             with hospital.fast_doctor.request() as req:
                 yield req
                 yield env.process(hospital.review())
@@ -68,6 +75,7 @@ def patient(env, name, hospital, wait_times):
             with hospital.ed_nurse.request() as req:
                 yield req
                 yield env.process(hospital.ed_lab())
+            yield env.process(hospital.ed_lab_wait())
             with hospital.ed_doctor.request() as req:
                 yield req
                 yield env.process(hospital.review())
@@ -104,12 +112,10 @@ def monitor(env, hospital, metrics, interval=5):
 def report(wait_times, metrics):
     avg_wait = np.mean(wait_times)
     max_wait = np.max(wait_times)
-    avg_wait_min, avg_wait_sec = divmod(avg_wait, 60)
-    max_wait_min, max_wait_sec = divmod(max_wait, 60)
 
     print("=== Simulation Results ===")
-    print(f"Average Wait Time: {int(avg_wait_min)} min {int(avg_wait_sec)} sec")
-    print(f"Max Wait Time:     {int(max_wait_min)} min {int(max_wait_sec)} sec\n")
+    print(f"Average Wait Time: {int(avg_wait)} min")
+    print(f"Max Wait Time:     {int(max_wait)} min\n")
 
     print("--- Average Queue Lengths ---")
     queue_data = [
@@ -185,11 +191,11 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--fast_doctors', type=int, default=1)
     parser.add_argument('--fast_nurses', type=int, default=1)
-    parser.add_argument('--ed_doctors', type=int, default=3)
-    parser.add_argument('--ed_nurses', type=int, default=2)
+    parser.add_argument('--ed_doctors', type=int, default=5)
+    parser.add_argument('--ed_nurses', type=int, default=5)
     parser.add_argument('--beds', type=int, default=5)
-    parser.add_argument('--n_patients', type=int, default=100)
-    parser.add_argument('--sim_time', type=int, default=1000)
+    parser.add_argument('--n_patients', type=int, default=144)
+    parser.add_argument('--sim_time', type=int, default=1440)
     parser.add_argument('--arrival_rate', type=float, default=10)
     args = parser.parse_args()
 
