@@ -1,0 +1,5 @@
+##### Breakdown of probabilities for event splits
+- **Fast-track vs Main ED Patient:** 30% probability that patient is admitted to fast-track vice-versa
+- **Lab-test for fast-track patients:** 30% probability that fast-track patient requires lab-test
+- **Lab-test for main ED patients:** 70% probability that main ED patient requires lab-test
+- **Admissions for main ED patients:** 50% probability that main ED patient will be admitted for further treatment.
