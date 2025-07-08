@@ -7,12 +7,17 @@
 - **[Before designing full simulation]** Refine "types" of simulation outputs - From past projects.✅
 - **[Designing full simulation]** Integrate BOTH (1) Fast-Track & (2) Main ED workflows to "simulation logic"✅
 - **[Finalise code]** main.py file for PoC + README.md instructions✅
-- **[Report writing]** Medium Article to present workflows, code, results and conclusions
+- **[Report writing]** Medium Article to present workflows, code, results and conclusions✅
 - **[Final Additions]** Execution traces + Optimisation codes - *To design appropriate system capacity*. 
 
 ![Image](images/ED.png)
 
 ---
+## **Resources**
+**Medium Article:** https://medium.com/@jinkett99/from-chaos-to-clarity-modelling-ed-processes-with-simpy-0400b16fe2f3
+
+---
+
 ## **Process Flow Chart**
 ![Image](images/simPy_processflow.png)
 
@@ -53,11 +58,11 @@ python main.py \
 | ---------------- | ----------------------------------- | ------- |
 | `--fast_doctors` | Number of fast-track doctors        | `1`     |
 | `--fast_nurses`  | Number of fast-track nurses         | `1`     |
-| `--ed_doctors`   | Number of main ED doctors           | `3`     |
-| `--ed_nurses`    | Number of main ED nurses            | `2`     |
+| `--ed_doctors`   | Number of main ED doctors           | `4`     |
+| `--ed_nurses`    | Number of main ED nurses            | `3`     |
 | `--beds`         | Number of ED admission beds         | `5`     |
-| `--n_patients`   | Number of patients to simulate      | `100`   |
-| `--sim_time`     | Total simulation time in minutes    | `1000`  |
+| `--n_patients`   | Number of patients to simulate      | `144`   |
+| `--sim_time`     | Total simulation time in minutes    | `1440`  |
 | `--arrival_rate` | Mean interarrival time (in minutes) | `10`    |
 
 ### 📤 **Output Format**
@@ -84,6 +89,7 @@ main folder/
 ├── 1.01-jk-experiments.ipynb           # Experimentation with discrete event simulation with simPy library. Project framing, formulation & brainstorming
 ├── 2.01-jk-implementation.ipynb        # Implementation of full system workflow to model performance of ED System set-up to understand system efficieny and patient experience
 ├── main.py                             # Python script to simulate process flow and return outputs as actionable insights (refer to output format above)
+├── project_article.pdf                 # Project summary of thought process, code implementation, findings and future work
 ```
 
 ---
